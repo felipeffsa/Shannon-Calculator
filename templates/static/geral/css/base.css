@@ -2,5 +2,9 @@
     margin-top: 50px;
 }
 .margin-alterada{
+    margin-top: 50px;
     margin-bottom:500px
+}
+.body-background{
+    background-color: rgba(109, 109, 109, 0.452);
 }

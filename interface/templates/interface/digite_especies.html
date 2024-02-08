@@ -6,13 +6,15 @@
     {% block conteudo %}
     
     <div class="container text-center margin-alterada">
-      <span class ='fs-2'>Digite os números das espécies</span>
+      <span class ='fs-2 mt-4'>Digite os números das espécies</span>
       <div class="row mt-5">
           <div class="col-12">
               
-              <form action=".">
-                  <span class ='fs-3'>Espécie 1 </span>
-                  <input type="number" class ='form-control-sm mt-2'><br><br>
+              <form action="{% url "processamento" %}">
+                {% for numero in numeros  %}
+                  <span class ='fs-3'>Espécie {{numero}} </span>
+                  <input type="number" name ='resultados' class ='form-control-sm mt-2'><br><br>
+                  {% endfor %}
                   <button type="submit" class ='btn btn-primary'>OK</button>
 
               </form>
