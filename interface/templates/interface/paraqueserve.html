@@ -1,42 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-<title>Shannon Calculator</title>
-<style>
-    .footer-editado{
-        margin-top: 100px;
-    }
-</style>
-</head>
-<body>
-    <!--A div abaixo ficará fixa em todas as páginas-->
-    <div class="container border border-dark text-center mt-3 "><h1>SHANNON CALCULATOR</h1></div>
-    <!--Fim do Shannon Calculator-->
-    <div class ='container text-center border border mt-3'>
-    <nav class="navbar navbar-expand bg-body-tertiary">
-        <div class="container-fluid">
-
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Para que serve ?</a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Calcular Indice</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">Comparar comunidades</a>
-              </li>
-            </ul>
-
-          </div>
-        </div>
-      </nav>
-    </div>
+{% extends "base.html" %}
     <!--Inicio das colunas do conteudo da página-->
-    <div class="container">
+    {% block title %}Para que serve ?{% endblock title %}
+    {% block conteudo %}
+    <div class="container" style ='margin-bottom: 170px'>
         <div class="row">
             <div class="col-12 text-center my-5 fs-1">Para que serve?</div>
             <div class="col-12 text-center border border-dark">O índice de Shannon (também chamado de índice Shannon-Weaver ou de índice do Shannon-Wiener) � ′{\displaystyle H^{\prime }} é um dos diversos índices da diversidade usados para medir a diversidade em dados categóricos. É simplesmente a informação entropica da distribuição, tratamento as espécies como símbolos e o tamanhos da respectiva população como uma probabilidade. Este artigo trata a sua utilização para medir a biodiversidade. A vantagem deste índice é que ele leva em consideração o número das espécies e as espécies dominantes. O índice é incrementado, quer por terem adicionado uma única espécie, ou por terem uma importante equitatividade. O nome "Shannon-Weaver" é uma contração imprópria; aparentemente alguns biólogos concluiram erradamente que Warren Weaver, autor de um influente prefácio do livro formulardo[1] por Claude Shannon publicado em 1948 papel [2] fundador da teoria da informação, era uma Cofundador desta teoria. Weaver teve um papel crucial no rápida desenvolvimento da teoria informação, no pós guerra, de um modo diferente, no entanto, como um influente administrador da Fundação Rockefeller, ele garantiu que a primeira publicações teóricos recebessem generosas doações para a pesquisa. Norbert Wiener não tinha em mão se quer o índice, embora sua influencia seja popular na cibernética era frequentemente relacionado a teoria da informação na década de 1950.</div>
@@ -45,15 +11,4 @@
         </div>
     </div>
 
-    <!--Inicio do footer-->
-    <div class ='container'>
-    <footer class="footer border border-dark text-dark mb-1 p-3 footer-editado">
-        <div class="container">
-          <p class="mb-0">Todos os direitos reservados &copy; 2024</p>
-          <p>By: Felipe Fernandes</p>
-        </div>
-      </footer>
-    </div>
-    
-</body>
-</html>
+    {% endblock conteudo %}
