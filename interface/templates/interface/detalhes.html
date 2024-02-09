@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %} Detalhes{% endblock title %} 
+{% block conteudo %}
+
+<div class ='container mt-5'>
+    <h1>Escolha uma comunidade</h1>
+    <form action ='#'> 
+    <select class="form-select w-50" name ='numeros' aria-label="Default select example">
+        <option selected>Selecione uma comunidade</option>
+        {% for comunidade in comunidades %}
+        <option value="{{comunidade.id}}">{{comunidade}}</option>
+        {% endfor %}
+      </select>
+      <button class ='btn btn-dark mt-3'>Ok</button>
+    </form>
+</div>
+
+<div class ='container mt-5' style ='margin-bottom:300px'>
+<table class="table table w-50 table-bordered border-dark">
+    <thead>
+      <tr>
+        <th scope="col">Pi</th>
+        <th scope="col">Ln Pi</th>
+        <th scope="col">(Pi)xLog(Pi)</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for dado in dados %}
+      <tr>
+       
+       <!--Isso esta complicado ! Falta fazer o laço for aninhado-->
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+     
+   
+    </tbody>
+   
+  </table>
+  <div class ='container fs-2'>
+    Resultado: H'
+  </div>
+
+</div>
+
+{% endblock conteudo %}
+
+
+
+
+

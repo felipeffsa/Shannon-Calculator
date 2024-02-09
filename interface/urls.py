@@ -6,4 +6,5 @@ urlpatterns = [
     path('digite/',views.digite_especies, name ='digite'),
     path('processamento',views.processamento, name ='processamento'),
     path('paraqueserve/',views.serve, name ='serve'),
+    path('detalhes/',views.detalhes, name ='detalhes')
 ]
