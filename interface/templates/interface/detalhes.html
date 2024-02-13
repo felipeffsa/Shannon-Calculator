@@ -14,35 +14,56 @@
       <button class ='btn btn-dark mt-3'>Ok</button>
     </form>
 </div>
-
+{% if dados %}
 <div class ='container mt-5' style ='margin-bottom:300px'>
-<table class="table table w-50 table-bordered border-dark">
-    <thead>
-      <tr>
-        <th scope="col">Pi</th>
-        <th scope="col">Ln Pi</th>
-        <th scope="col">(Pi)xLog(Pi)</th>
-      </tr>
-    </thead>
-    <tbody>
-    {% for dado in dados %}
-      <tr>
-       
-       <!--Isso esta complicado ! Falta fazer o laço for aninhado-->
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-     
-   
-    </tbody>
-   
-  </table>
+  <div class ='row'>
+    <div class ='col-12 col-lg-4'>
+      <ul>
+        <h2>Numeros Pi</h2>
+        {% for dado in dados %}
+        {% for numero_pi in dado.pi.all %}
+        <li>
+          {{numero_pi}}
+        </li>
+        {% endfor %}
+        {% endfor %}
+      </ul>
+
+    </div>
+    <hr>
+    <div class ='col-12 col-lg-4 '>  <ul>
+      <h2>Numeros LogPi</h2>
+      {% for dado in dados %}
+      {% for numero_logpi in dado.logpi.all %}
+      <li>
+        {{numero_logpi}}
+      </li>
+      {% endfor %}
+      {% endfor %}
+    </ul></div>
+    <hr>
+    <div class ='col-12 col-lg-4'>  <ul>
+      <h2>Numeros Multiplicação Pi</h2>
+      {% for dado in dados %}
+      {% for multipi in dado.multipi.all %}
+      <li>
+        {{multipi}}
+      </li>
+      {% endfor %}
+      {% endfor %}
+    </ul></div>
+  </div>
   <div class ='container fs-2'>
-    Resultado: H'
+    Resultado: H' {% for dado in dados %}
+    
+    <span class ='text-primary bg-white rounded'>{{dado.resultado}}</span>
+    {% endfor %}
   </div>
 
 </div>
+{% else %}
+<h1 class ='container' style ='margin-bottom: 450px'>Escolha uma comunidade para ver o seu detalhe</h1>
+{% endif %}
 
 {% endblock conteudo %}
 

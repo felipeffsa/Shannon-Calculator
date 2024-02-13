@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Comparação comunidades{% endblock title %}Comparação entre comunidades
+
+{% block conteudo %}
+<div class ='row'>
+
+{% if valor_01.resultado > valor_02.resultado %}
+<div class="col-12 col-lg-12 text-center mt-5 fs-1">A comunidade 2 é a mais abundante</div>
+{% elif valor_02.resultado > valor_01.resultado %}
+<div class="col-12 text-center mt-5 fs-1">A comunidade 1 é a mais abundante</div>
+{% else %}
+<div class="col-12 text-center mt-5 fs-1">Você esta comparando as mesmas comunidades</div>
+{% endif %}
+    <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center " style ='margin-bottom: 150px; margin-top:100px'><div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Comunidade 1</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">H': {{valor_01.resultado}}</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="{% url 'detalhes' %} ?numeros={{ valor_01.id }}" class="card-link">Detalhes</a>
+          </div>
+      </div></div>
+    <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center" style ='margin-bottom: 150px; margin-top:100px'><div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Comunidade 2</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">H': {{valor_02.resultado}}</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="{% url 'detalhes' %}?numeros={{ valor_02.id }}" class="card-link">Detalhes</a>
+        </div>
+      </div></div>
+    </div>
+</div>
+<div style ='margin-bottom:100px'></div>
+</div>
+
+{% endblock conteudo %}
