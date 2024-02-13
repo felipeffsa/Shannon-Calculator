@@ -22,7 +22,7 @@
         <h2>Numeros Pi</h2>
         {% for dado in dados %}
         {% for numero_pi in dado.pi.all %}
-        <li>
+        <li class ='border-bottom border-dark'>
           {{numero_pi}}
         </li>
         {% endfor %}
@@ -35,7 +35,7 @@
       <h2>Numeros LogPi</h2>
       {% for dado in dados %}
       {% for numero_logpi in dado.logpi.all %}
-      <li>
+      <li class ='border-bottom border-dark'>
         {{numero_logpi}}
       </li>
       {% endfor %}
@@ -46,7 +46,7 @@
       <h2>Numeros Multiplicação Pi</h2>
       {% for dado in dados %}
       {% for multipi in dado.multipi.all %}
-      <li>
+      <li class ='border-bottom border-dark'>
         {{multipi}}
       </li>
       {% endfor %}
