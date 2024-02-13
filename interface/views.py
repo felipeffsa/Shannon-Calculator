@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 import math
 from interface.models import Dados, Pi, LogPi, MultLogPi
@@ -74,7 +74,7 @@ def processamento(request):
     
 
     
-    return HttpResponse('Teste')
+    return redirect(f'detalhes/?numeros={dados.id}#')
     
 def detalhes(request):
     comunidades = Dados.objects.filter(usuario = request.user)
@@ -87,3 +87,21 @@ def detalhes(request):
 def serve(request):
     return render(request,'interface/paraqueserve.html')
 
+#Modificar essa view. Criar outra view para os resultados
+def comparacao_comunidades_processamento(request):
+    dados = Dados.objects.filter(usuario = request.user)
+    if request.method == 'POST':
+        return redirect('comparar_comunidades')
+        
+    
+    return render(request,'interface/comparacao_comunidades.html', context={'dados':dados})
+
+
+def comparacao_comunidades(request):
+    
+    comunidade_01 = request.POST.get('comunidade_01')
+    comunidade_02 = request.POST.get('comunidade_02')
+    valor_01 = Dados.objects.get(id =comunidade_01)
+    valor_02 = Dados.objects.get(id =comunidade_02)
+    
+    return render(request,'interface/comparacao_comunidades_resultado.html',context={'valor_01':valor_01,'valor_02':valor_02})
